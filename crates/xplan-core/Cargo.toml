@@ -1,0 +1,21 @@
+[package]
+name = "xplan-core"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+xplan-db = { path = "../xplan-db" }
+xplan-cache = { path = "../xplan-cache" }
+xplan-provider = { path = "../xplan-provider" }
+uuid.workspace = true
+chrono.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+anyhow.workspace = true
+rand.workspace = true
+sha2.workspace = true
+hex.workspace = true
+thiserror.workspace = true
+dashmap = "6"
+sqlx.workspace = true
+serde_json.workspace = true

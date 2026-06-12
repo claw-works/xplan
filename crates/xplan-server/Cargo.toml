@@ -1,0 +1,31 @@
+[package]
+name = "xplan-server"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+xplan-db = { path = "../xplan-db" }
+xplan-cache = { path = "../xplan-cache" }
+xplan-provider = { path = "../xplan-provider" }
+xplan-core = { path = "../xplan-core" }
+axum.workspace = true
+tower.workspace = true
+tower-http.workspace = true
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+uuid.workspace = true
+chrono.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+sqlx.workspace = true
+config.workspace = true
+anyhow.workspace = true
+hex.workspace = true
+deadpool-redis.workspace = true
+aes-gcm.workspace = true
+rand.workspace = true
+reqwest.workspace = true
+tokio-stream.workspace = true
+bytes.workspace = true
+futures-util.workspace = true

@@ -1,0 +1,13 @@
+[server]
+host = "0.0.0.0"
+port = 26011
+
+[database]
+url = "postgres://dev:dev@localhost/xplan"
+max_connections = 10
+
+[redis]
+url = "redis://:dev@localhost:6379"
+
+[encryption]
+key_hex = "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
