@@ -71,6 +71,24 @@ XPLAN__ENCRYPTION__KEY_HEX="64-char-hex-string"
 
 > ⚠️ **Production**: change `encryption.key_hex` to a unique 32-byte hex string (e.g. `openssl rand -hex 32`). The default value in `config/default.toml` is for local development only — using it in production lets anyone with DB access decrypt all stored upstream API keys.
 
+### Docker
+
+A multi-stage `Dockerfile` builds the frontend (Bun) and Rust binary into a single image. The compiled server serves the admin UI from `frontend/dist` at `/admin/`.
+
+```bash
+# Pull from GHCR (built by .github/workflows/docker.yml on push to main)
+docker pull ghcr.io/claw-works/xplan:latest
+
+# Run
+docker run -d --name xplan -p 26011:26011 \
+  -e XPLAN__DATABASE__URL="postgres://user:pass@host/xplan" \
+  -e XPLAN__REDIS__URL="redis://:password@host:6379" \
+  -e XPLAN__ENCRYPTION__KEY_HEX="$(openssl rand -hex 32)" \
+  ghcr.io/claw-works/xplan:latest
+```
+
+Build locally: `docker build -t xplan .`
+
 ## API
 
 ### Proxy Endpoints (client-facing)

@@ -7,7 +7,7 @@ API="http://localhost:26011"
 KEY="${XPLAN_KEY:-sk-xplan-REPLACE_ME}"
 # MODEL="claude-sonnet-4-6"
 MODEL="deepseek-v4-flash"
-MODEL="anthropic.claude-fable-5"
+# MODEL="anthropic.claude-fable-5"
 
 
 # MODEL="glm-5.1"
